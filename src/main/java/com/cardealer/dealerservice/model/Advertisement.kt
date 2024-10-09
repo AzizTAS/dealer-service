@@ -15,8 +15,7 @@ data class Advertisement @JvmOverloads constructor(
     @Column(nullable = false, length = 500)
     val description: String,
 
-    @ManyToOne
-    @JoinColumn(name = "vehicle_id", nullable = false)
+    @OneToOne(mappedBy = "advertisement")
     val vehicle: Vehicle,
 
     @ManyToOne
