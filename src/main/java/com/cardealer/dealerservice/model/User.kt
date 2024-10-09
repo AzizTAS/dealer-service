@@ -21,8 +21,9 @@ data class User @JvmOverloads constructor(
     @Column(nullable = true, length = 255)
     val address: String?,
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    val userType: String,
+    val role: Role,
 
     @Temporal(TemporalType.TIMESTAMP)
     val registrationDate: Date = Date()

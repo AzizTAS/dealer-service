@@ -33,5 +33,13 @@ data class Vehicle @JvmOverloads constructor(
     val description: String?,
 
     @Column(nullable = false)
-    val status: String
+    val status: String,
+
+    @OneToOne
+    @JoinColumn(name = "advertisement_id", nullable = true) // Ilan ile ilişki
+    val advertisement: Advertisement? = null,
+
+    @ManyToOne
+    @JoinColumn(name = "garage_id", nullable = true) // Garaj ile ilişki
+    val garage: Garage? = null
 )
